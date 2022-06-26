@@ -235,11 +235,12 @@
         }
         else{
             var db = firebase.database();
-            db.ref(name).set({
-                    email : email,
-                    subject : subject,
-                    message : message
-                });
+            db.ref(email).set({
+                name : name,
+                email : email,
+                subject : subject,
+                message : message
+            });
         }
     }
 
