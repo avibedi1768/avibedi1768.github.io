@@ -53,6 +53,7 @@
         const firebaseConfig = {
         apiKey: "AIzaSyDB3LlSFY4kErHopEVKa__mgjffVI-mwrw",
         authDomain: "portfolio-0-6c89c.firebaseapp.com",
+        databaseURL: "https://portfolio-0-6c89c-default-rtdb.firebaseio.com",
         projectId: "portfolio-0-6c89c",
         storageBucket: "portfolio-0-6c89c.appspot.com",
         messagingSenderId: "345248326907",
@@ -234,11 +235,11 @@
         }
         else{
             var db = firebase.database();
-            db.ref(name).set(){
+            db.ref(name).set({
                     email : email,
                     subject : subject,
                     message : message
-                }
+                });
         }
     }
 
