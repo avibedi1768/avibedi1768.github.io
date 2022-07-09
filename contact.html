@@ -39,6 +39,49 @@
 
     <!-- Modernizr JS File -->
     <script src="js/modernizr.custom.js"></script>
+    <style>
+        #snackbar {
+          visibility: hidden;
+          min-width: 250px;
+          margin-left: -125px;
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          border-radius: 2px;
+          padding: 16px;
+          position: fixed;
+          z-index: 1;
+          left: 50%;
+          bottom: 30px;
+          font-size: 17px;
+        }
+
+        #snackbar.show {
+          visibility: visible;
+          -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+          animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+          from {bottom: 0; opacity: 0;} 
+          to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+          from {bottom: 0; opacity: 0;}
+          to {bottom: 30px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+          from {bottom: 30px; opacity: 1;} 
+          to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+          from {bottom: 30px; opacity: 1;}
+          to {bottom: 0; opacity: 0;}
+        }
+</style>
 </head>
 
 <body class="contact">
@@ -197,7 +240,7 @@
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
             <div class="col-12 col-lg-8">
-                <form class="contactform" method="post" action="http://slimhamdi.net/tunis/dark/php/process-form.php">
+                
                     <div class="contactform">
                         <div class="row">
                             <div class="col-12 col-md-4">
@@ -211,14 +254,16 @@
                             </div>
                             <div class="col-12">
                                 <textarea id="message" name="message" placeholder="YOUR MESSAGE"></textarea>
-                                <button onclick="sendData() " class="btn btn-contact">Send Message</button>
+                                <button onclick="sendData()" class="btn btn-contact">Send Message</button>
                             </div>
+                            <div id="snackbar">Sending...</div>
+
                             <div class="col-12 form-message">
                                 <span class="output_message text-center font-weight-600 text-uppercase"></span>
                             </div>
                         </div>
                     </div>
-                </form>
+                
             </div>
             <!-- Contact Form Ends -->
         </div>
@@ -241,7 +286,17 @@
                 subject : subject,
                 message : message
             });
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+            myFunction();
         }
+    }
+    function myFunction() {
+        var x = document.getElementById("snackbar");
+        x.className = "show";
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     }
 
 </script>
