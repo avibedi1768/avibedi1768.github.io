@@ -219,42 +219,42 @@
                 <h3 class="text-uppercase custom-title mb-0 ft-wt-600 pb-3">Don't be shy !</h3>
                 <p class="open-sans-font mb-3">Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
                 <p class="open-sans-font custom-span-contact position-relative">
-                    <i class="fa fa-envelope-open position-absolute"></i>
-                    <span class="d-block">mail me</span>avibedi1234@gmail.com
+                    <a href="mailto: avibedi1234@gmail.com" target="_blank"><i class="fa fa-envelope-open position-absolute"></i>
+                    <span class="d-block">mail me</span>avibedi1234@gmail.com</a>
                 </p>
                 <p class="open-sans-font custom-span-contact position-relative">
-                    <i class="fa fa-phone-square position-absolute"></i>
-                    <span class="d-block">call me</span>+918146004250
+                    <a href="https://wa.me/918146004250" target="_blank"> <i class="fa fa-whatsapp position-absolute"></i>
+                    <span class="d-block">whatsapp me</span>+918146004250</a>
                 </p>
                 <ul class="social list-unstyled pt-1 mb-5">
-                    <li class="facebook"><a title="Facebook" href="mailto: avibedi1234@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+                    <li class="facebook"><a title="GitHub" href="https://github.com/avibedi1768" target="_blank"><i class="fa fa-github"></i></a>
                     </li>
                     <li class="twitter"><a title="Twitter" href="https://twitter.com/avibedi1768" target="_blank"><i class="fa fa-twitter"></i></a>
                     </li>
-                    <li class="youtube"><a title="Youtube" href="https://www.instagram.com/avi_bedi1768/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <li class="youtube"><a title="Instagram" href="https://www.instagram.com/avi_bedi1768/" target="_blank"><i class="fa fa-instagram"></i></a>
                     </li>
-                    <li class="dribbble"><a title="Dribbble" href="https://www.linkedin.com/in/arshpreet-singh-bedi-845758229/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    <li class="dribbble"><a title="LinkedIn" href="https://www.linkedin.com/in/arshpreet-singh-bedi-845758229/" target="_blank"><i class="fa fa-linkedin"></i></a>
                     </li>
                 </ul>
             </div>
             <!-- Left Side Ends -->
             <!-- Contact Form Starts -->
             <div class="col-12 col-lg-8">
-                
+                <form action="https://formspree.io/f/mwkydnyd" method="POST">
                     <div class="contactform">
                         <div class="row">
                             <div class="col-12 col-md-4">
-                                <input type="text" id="name" name="name" placeholder="YOUR NAME">
+                                <input required type="text" id="name" name="name" placeholder="YOUR NAME">
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="email" id="email" name="email" placeholder="YOUR EMAIL">
+                                <input required type="email" id="email" name="email" placeholder="YOUR EMAIL">
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="text" id="subject" name="subject" placeholder="YOUR SUBJECT">
+                                <input type="text" required id="subject" name="subject" placeholder="YOUR SUBJECT">
                             </div>
-                            <div class="col-12">
-                                <textarea id="message" name="message" placeholder="YOUR MESSAGE"></textarea>
-                                <button onclick="sendData()" class="btn btn-contact">Send Message</button>
+                            <div class="col-12">z
+                                <textarea id="message" required name="message" placeholder="YOUR MESSAGE"></textarea>
+                                <button type="submit" class="btn btn-contact" >Send Message</button>
                             </div>
                             <div id="snackbar">Sending...</div>
 
@@ -263,7 +263,7 @@
                             </div>
                         </div>
                     </div>
-                
+                </form>
             </div>
             <!-- Contact Form Ends -->
         </div>
@@ -280,7 +280,7 @@
         }
         else{
             var db = firebase.database();
-            db.ref(email).set({
+            db.ref().push({
                 name : name,
                 email : email,
                 subject : subject,
