@@ -742,8 +742,8 @@ body.light hr.separator {
 }
 
 .portfolio .grid li {
-  width: 33.333333%;
-  float: left;
+  width: 50%;
+  float: center;
   cursor: pointer;
   padding: 15px;
 }
